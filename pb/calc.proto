@@ -1,0 +1,20 @@
+syntax="proto3";
+package pb;
+
+option go_package ="../pb";
+
+// 定义参数
+message Args {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+// 定义返回结构
+message Answer {
+  int32 sum = 1;
+}
+
+// 定义rpc方法
+service Arith {
+  rpc calc(Args) returns (Answer);
+}
